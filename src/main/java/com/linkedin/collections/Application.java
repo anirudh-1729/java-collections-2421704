@@ -17,14 +17,26 @@ public class Application {
 		Collection<Room> rooms = new ArrayList<>(Arrays.asList(cambridge, oxford, victoria, manchester));
 		oxford.setPetFriendly(true);
 		victoria.setPetFriendly(true);
-		
-		for(Room room : rooms) {
+
+		Iterator<Room> iter = rooms.iterator();
+
+		while (iter.hasNext()) {
 			
-			if(room.isPetFriendly()) {
-				rooms.remove(room);
+			Room room = iter.next();
+			
+			if (room.isPetFriendly()) {
+				
+				iter.remove();
 			}
-			
 		}
+		
+		// for(Room room : rooms) {
+			
+		// 	if(room.isPetFriendly()) {
+		// 		rooms.remove(room);
+		// 	}
+			
+		// }
 		
 		System.out.println(rooms);
 		
